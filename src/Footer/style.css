@@ -1,0 +1,10 @@
+.footer {
+  text-align: center;
+}
+.footer__container {
+  padding: 20px;
+}
+.footer--link {
+  text-decoration: none;
+  color: white;
+}

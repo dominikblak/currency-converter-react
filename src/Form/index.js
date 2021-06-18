@@ -1,13 +1,13 @@
 import "./style.css";
 const Form = () => (
   <form className="container__form">
-    <fieldset class="container_fieldset">
+    <fieldset className="container_fieldset">
       <legend>Twoje dane</legend>
       <p>
         <label for="amountid">
-          <span class="container__label"> Twoja kwota w zł :</span>
+          <span className="container__label"> Twoja kwota w zł :</span>
           <input
-            class="container__input js-input"
+            className="container__input js-input"
             type="number"
             name="amount"
             min="0"
@@ -19,25 +19,25 @@ const Form = () => (
       </p>
       <p>
         <label for="currency">
-          <span class="container__label"> Wybierz walutę :</span>
-          <select name="currency_choice" id="currency" class="container__input js-container">
-            <option value="EUR" class="container__euro" selected>
+          <span className="container__label"> Wybierz walutę :</span>
+          <select name="currency_choice" id="currency" className="container__input js-container">
+            <option value="EUR" className="container__euro" selected>
               EUR
             </option>
-            <option value="USD" class="container__usd">
+            <option value="USD" className="container__usd">
               USD
             </option>
-            <option value="GBP" class="container__gbp">
+            <option value="GBP" className="container__gbp">
               GBP
             </option>
           </select>
         </label>
       </p>
       <p>
-        <button class="container__btn">Przelicz</button>
+        <button className="container__btn">Przelicz</button>
       </p>
       <p>
-        Otrzymasz : <strong class="container__value js-value"></strong>
+        Otrzymasz : <strong className="container__value js-value"></strong>
       </p>
     </fieldset>
   </form>
