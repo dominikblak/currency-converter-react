@@ -8,7 +8,7 @@ function App() {
     <Container>
       <Header title="Kalkulator walut"></Header>
       <Form></Form>
-      <Footer></Footer>
+      <Footer author="Dominik Blak 2021"></Footer>
     </Container>
   );
 }
