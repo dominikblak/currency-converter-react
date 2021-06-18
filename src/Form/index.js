@@ -43,7 +43,7 @@ const Form = (props) => {
               className="form__input"
             >
               {currency.map((money) => (
-                <option key={money.id}>{money.shortName}</option>
+                <option key={money.id}>{money.name}</option>
               ))}
             </select>
           </label>
