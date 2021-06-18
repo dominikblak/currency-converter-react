@@ -1,11 +1,14 @@
 import { useState } from "react";
 import "./style.css";
+import "../currency.js";
 const Form = () => {
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState();
   const onInputChange = ({ target }) => setAmount(target.value);
   const onFormSubmit = (event) => {
     event.preventDefault();
   };
+  const [currency, setCurrency] = useState("");
+  const onSelectChange = (event) => setCurrency(event.target.value);
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
@@ -29,7 +32,13 @@ const Form = () => {
         <p>
           <label for="currency">
             <span className="form__label"> Wybierz walutę :</span>
-            <select name="currency_choice" id="currency" className="form__input">
+            <select
+              value={currency}
+              onChange={onSelectChange}
+              name="currency_choice"
+              id="currency"
+              className="form__input"
+            >
               <option value="EUR" className="form__euro" selected>
                 EUR
               </option>
