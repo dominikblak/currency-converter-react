@@ -1,8 +1,15 @@
+import Container from "./Container";
+import Header from "./Header";
+import Form from "./Form";
+import Footer from "./Footer";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Test</header>
-    </div>
+    <Container>
+      <Header title="Kalkulator walut"></Header>
+      <Form></Form>
+      <Footer author="Dominik Blak 2021"></Footer>
+    </Container>
   );
 }
 
