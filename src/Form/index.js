@@ -6,8 +6,9 @@ const Form = () => {
   const onInputChange = ({ target }) => setAmount(target.value);
   const onFormSubmit = (event) => {
     event.preventDefault();
+    return console.log(`Wybrano  ${amount} zł na ${shortCurrency}`);
   };
-  const [currency, setCurrency] = useState("");
+  const [shortCurrency, setCurrency] = useState();
   const onSelectChange = (event) => setCurrency(event.target.value);
   return (
     <form className="form" onSubmit={onFormSubmit}>
@@ -33,7 +34,7 @@ const Form = () => {
           <label for="currency">
             <span className="form__label"> Wybierz walutę :</span>
             <select
-              value={currency}
+              value={shortCurrency}
               onChange={onSelectChange}
               name="currency_choice"
               id="currency"
