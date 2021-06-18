@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./style.css";
-import "../currency.js";
-const Form = () => {
+import currency from "../currency.js";
+
+const Form = (props) => {
   const [amount, setAmount] = useState();
   const onInputChange = ({ target }) => setAmount(target.value);
   const onFormSubmit = (event) => {
@@ -10,6 +11,7 @@ const Form = () => {
   };
   const [shortCurrency, setCurrency] = useState();
   const onSelectChange = (event) => setCurrency(event.target.value);
+
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
@@ -40,15 +42,9 @@ const Form = () => {
               id="currency"
               className="form__input"
             >
-              <option value="EUR" className="form__euro" selected>
-                EUR
-              </option>
-              <option value="USD" className="form__usd">
-                USD
-              </option>
-              <option value="GBP" className="form__gbp">
-                GBP
-              </option>
+              {currency.map((money) => (
+                <option key={money.id}>{money.shortName}</option>
+              ))}
             </select>
           </label>
         </p>
