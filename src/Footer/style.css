@@ -4,7 +4,7 @@
 .footer__container {
   padding: 20px;
 }
-.footer--link {
+.footer__container--link {
   text-decoration: none;
   color: white;
 }
