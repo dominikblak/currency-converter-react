@@ -1,6 +1,5 @@
-const Currency = [
-  { id: 1, name: "Euro", shortName: "EUR", value: "4.55" },
-  { id: 2, name: "Dolar Amerykański", shortName: "USD", value: "3.83" },
-  { id: 3, name: "Funt Brytjski", shortName: "GBP", value: "5.31" },
+export const curriences = [
+  { name: "Euro", short: "EUR", rate: "4.55" },
+  { name: "Dolar Amerykański", short: "USD", rate: "3.83" },
+  { name: "Funt Brytjski", short: "GBP", rate: "5.31" },
 ];
-export default Currency;

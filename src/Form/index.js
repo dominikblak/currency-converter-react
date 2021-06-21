@@ -1,34 +1,33 @@
 import { useState } from "react";
 import "./style.css";
-import currency from "../currency.js";
+import { curriences } from "../currency.js";
+import { Result } from "./Result";
 
-const Form = (props) => {
-  const [amount, setAmount] = useState();
-  const onInputChange = ({ target }) => setAmount(target.value);
-  const onFormSubmit = (event) => {
+export const Form = ({ calculateResault, result }) => {
+  const [currency, setCurrency] = useState(curriences[0].short);
+  const [amount, setAmount] = useState("");
+  const onSubmit = (event) => {
     event.preventDefault();
-    return console.log(`Wybrano  ${amount} zł na ${shortCurrency}`);
+    calculateResault(currency, amount);
   };
-  const [shortCurrency, setCurrency] = useState();
-  const onSelectChange = (event) => setCurrency(event.target.value);
-
   return (
-    <form className="form" onSubmit={onFormSubmit}>
+    <form className="form" onSubmit={onSubmit}>
       <fieldset className="form__fieldset">
         <legend>Twoje dane</legend>
         <p>
           <label for="amountid">
             <span className="form__label"> Twoja kwota w zł :</span>
             <input
-              value={amount}
-              onChange={onInputChange}
               className="form__input"
               type="number"
               name="amount"
               min="0"
-              step="any"
               id="amountid"
               required
+              step="0.01"
+              placeholder="Podaj kwotę w zł"
+              value={amount}
+              onChange={({ target }) => setAmount(target.value)}
             />
           </label>
         </p>
@@ -36,14 +35,16 @@ const Form = (props) => {
           <label for="currency">
             <span className="form__label"> Wybierz walutę :</span>
             <select
-              value={shortCurrency}
-              onChange={onSelectChange}
               name="currency_choice"
               id="currency"
               className="form__input"
+              value={currency}
+              onChange={({ target }) => setCurrency(target.value)}
             >
-              {currency.map((money) => (
-                <option key={money.id}>{money.name}</option>
+              {curriences.map((currency) => (
+                <option key={currency.short} value={currency.short}>
+                  {currency.name}
+                </option>
               ))}
             </select>
           </label>
@@ -51,9 +52,8 @@ const Form = (props) => {
         <p>
           <button className="form__button">Przelicz</button>
         </p>
-        <p>
-          Otrzymasz : <strong className="form__value "></strong>
-        </p>
+
+        <Result result={result} />
       </fieldset>
     </form>
   );
