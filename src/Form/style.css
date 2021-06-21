@@ -15,11 +15,6 @@
   margin-left: 30px;
   width: 150px;
 }
-
-.form__value {
-  color: red;
-  font-size: 1.4em;
-}
 .form__label {
   display: inline-block;
   width: 150px;
