@@ -1,5 +1,10 @@
-.container__header {
+.header {
   margin-top: 100px;
   text-align: center;
   font-size: 3.5em;
+}
+@media (max-width: 767px) {
+  .header {
+    margin-top: 50px;
+  }
 }
