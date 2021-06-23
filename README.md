@@ -1,4 +1,4 @@
-# 💶 Currency-converter
+# 💶 Currency-converter-React
 
 ---
 
