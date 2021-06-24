@@ -3,13 +3,27 @@ import "./style.css";
 import { curriences } from "../currency.js";
 import { Result } from "../Result";
 
-export const Form = ({ calculateResault, result }) => {
+export const Form = () => {
   const [currency, setCurrency] = useState(curriences[0].short);
+
+  const [result, setResult] = useState();
+  const calculateResault = (currency, amount) => {
+    const rate = curriences.find(({ short }) => short === currency).rate;
+
+    setResult({
+      sourceAmount: +amount,
+      targetAmount: amount / rate,
+      currency,
+    });
+  };
+
   const [amount, setAmount] = useState("");
   const onSubmit = (event) => {
     event.preventDefault();
     calculateResault(currency, amount);
   };
+
+  
   return (
     <form className="form" onSubmit={onSubmit}>
       <fieldset className="form__fieldset">
