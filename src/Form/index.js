@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.css";
-import { curriences } from "../currency.js";
-import { Result } from "../Result";
+import { curriences } from "./currency.js";
+import { Result } from "./Result";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(curriences[0].short);
