@@ -66,7 +66,6 @@ export const Form = () => {
         <p>
           <button className="form__button">Przelicz</button>
         </p>
-
         <Result result={result} />
       </fieldset>
     </form>
