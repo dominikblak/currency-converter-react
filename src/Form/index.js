@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./style.css";
-import { curriences } from "./currency.js";
+import { currencies } from "./currency.js";
 import { Result } from "./Result";
 
 export const Form = () => {
-  const [currency, setCurrency] = useState(curriences[0].short);
+  const [currency, setCurrency] = useState(currencies[0].short);
 
   const [result, setResult] = useState();
   const calculateResault = (currency, amount) => {
-    const rate = curriences.find(({ short }) => short === currency).rate;
+    const rate = currencies.find(({ short }) => short === currency).rate;
 
     setResult({
       sourceAmount: +amount,
@@ -23,7 +23,6 @@ export const Form = () => {
     calculateResault(currency, amount);
   };
 
-  
   return (
     <form className="form" onSubmit={onSubmit}>
       <fieldset className="form__fieldset">
@@ -55,7 +54,7 @@ export const Form = () => {
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
             >
-              {curriences.map((currency) => (
+              {currencies.map((currency) => (
                 <option key={currency.short} value={currency.short}>
                   {currency.name}
                 </option>
