@@ -28,7 +28,7 @@ export const Form = () => {
       <fieldset className="form__fieldset">
         <legend>Twoje dane</legend>
         <p>
-          <label for="amountid">
+          <label htmlFor="amountid">
             <span className="form__label"> Twoja kwota w zł :</span>
             <input
               className="form__input"
@@ -45,7 +45,7 @@ export const Form = () => {
           </label>
         </p>
         <p>
-          <label for="currency">
+          <label htmlFor="currency">
             <span className="form__label"> Wybierz walutę :</span>
             <select
               name="currency_choice"
