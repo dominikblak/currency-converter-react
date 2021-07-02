@@ -19,7 +19,7 @@ const Clock = () => {
     return () => {
       clearInterval(intervalDate);
     };
-  }, [setDate]);
+  }, []);
   return <p className="date">Dzisiaj jest {formattedDate}</p>;
 };
 export default Clock;
