@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
+import Clock from "./Clock";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -27,6 +28,7 @@ export const Form = () => {
     <form className="form" onSubmit={onSubmit}>
       <fieldset className="form__fieldset">
         <legend>Twoje dane</legend>
+        <Clock/>
         <p>
           <label htmlFor="amountid">
             <span className="form__label"> Twoja kwota w zł :</span>
