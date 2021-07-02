@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 const Clock = () => {
   const [date, setDate] = useState(new Date());
+
   const formattedDate = date.toLocaleDateString(undefined, {
     day: "numeric",
     weekday: "long",
@@ -12,6 +13,7 @@ const Clock = () => {
     minute: "numeric",
     second: "numeric",
   });
+
   useEffect(() => {
     const intervalDate = setInterval(() => {
       setDate(new Date());
@@ -20,6 +22,8 @@ const Clock = () => {
       clearInterval(intervalDate);
     };
   }, []);
+
   return <p className="date">Dzisiaj jest {formattedDate}</p>;
 };
+
 export default Clock;
