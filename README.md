@@ -8,7 +8,9 @@
 
 ### ✏ Description
 
-Currency converter - Currency converter from PLN to EUR, USD, GBP.
+Currency converter 
+- responsive currency converter from PLN to EUR, USD, GBP,
+- clock with date and time
 <img src="https://github.com/dominikblak/currency-converter-react/blob/master/Animation_currency_converter.gif" alt="demo_Currency_converter">
 
 
