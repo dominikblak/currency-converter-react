@@ -3,6 +3,7 @@ import "./style.css";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
+import { FormContent } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -25,10 +26,10 @@ export const Form = () => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <FormContent onSubmit={onSubmit}>
       <fieldset className="form__fieldset">
         <legend>Twoje dane</legend>
-        <Clock/>
+        <Clock />
         <p>
           <label htmlFor="amountid">
             <span className="form__label"> Twoja kwota w zł :</span>
@@ -69,7 +70,7 @@ export const Form = () => {
         </p>
         <Result result={result} />
       </fieldset>
-    </form>
+    </FormContent>
   );
 };
 export default Form;
