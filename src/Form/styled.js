@@ -17,11 +17,6 @@ export const FormInput = styled.input`
   margin-left: 30px;
   width: 150px;
 `;
-export const FormSelect = styled.select`
-  margin-top: 10px;
-  margin-left: 30px;
-  width: 150px;
-`;
 export const FormButton = styled.button`
   display: block;
   margin: 30px auto 10px;

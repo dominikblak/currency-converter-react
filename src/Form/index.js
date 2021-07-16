@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "./style.css";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
-import { FormContent, FormFieldset, FormInput, FormSpan, FormSelect, FormButton } from "./styled";
+import { FormContent, FormFieldset, FormInput, FormSpan, FormButton } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -49,7 +48,8 @@ export const Form = () => {
         <p>
           <label htmlFor="currency">
             <FormSpan> Wybierz walutę :</FormSpan>
-            <FormSelect
+            <FormInput
+              as="select"
               name="currency_choice"
               id="currency"
               value={currency}
@@ -60,7 +60,7 @@ export const Form = () => {
                   {currency.name}
                 </option>
               ))}
-            </FormSelect>
+            </FormInput>
           </label>
         </p>
         <p>
