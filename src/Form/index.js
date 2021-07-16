@@ -3,7 +3,7 @@ import "./style.css";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
-import { FormContent, FormFieldset, FormLabel } from "./styled";
+import { FormContent, FormFieldset, FormSpan } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -32,7 +32,7 @@ export const Form = () => {
         <Clock />
         <p>
           <label htmlFor="amountid">
-            <FormLabel> Twoja kwota w zł :</FormLabel>
+            <FormSpan> Twoja kwota w zł :</FormSpan>
             <input
               className="form__input"
               type="number"
@@ -49,7 +49,7 @@ export const Form = () => {
         </p>
         <p>
           <label htmlFor="currency">
-            <FormLabel> Wybierz walutę :</FormLabel>
+            <FormSpan> Wybierz walutę :</FormSpan>
             <select
               name="currency_choice"
               id="currency"

@@ -8,7 +8,7 @@ export const FormContent = styled.form`
 export const FormFieldset = styled.fieldset`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 `;
-export const FormLabel = styled.label`
+export const FormSpan = styled.span`
   display: inline-block;
   width: 150px;
 `;
