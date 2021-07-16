@@ -1,3 +1,4 @@
 import "./style.css";
-const Container = (props) => <section className="container">{props.children}</section>;
+import { Content } from "./styled";
+const Container = (props) => <Content>{props.children}</Content>;
 export default Container;
