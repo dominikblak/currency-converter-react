@@ -1,15 +1,15 @@
-import "./style.css";
+import { ResultContent, ResultYourCurrency, ResultSelectedCurrency } from "./styled";
 
 export const Result = ({ result }) => (
-  <p className="result">
+  <ResultContent>
     {result !== undefined && (
       <>
         Otrzymasz : &nbsp;
-        <strong className="result result--yourcurrency">{result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=&nbsp;</strong>
-        <strong className="result result--selectedcurrency">
+        <ResultYourCurrency as="strong">{result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=&nbsp;</ResultYourCurrency>
+        <ResultSelectedCurrency as="strong">
           {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
-        </strong>
+        </ResultSelectedCurrency>
       </>
     )}
-  </p>
+  </ResultContent>
 );

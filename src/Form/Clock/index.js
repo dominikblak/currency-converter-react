@@ -1,5 +1,5 @@
-import "./style.css";
 import { useEffect, useState } from "react";
+import { LocalDate } from "./styled";
 
 const Clock = () => {
   const [date, setDate] = useState(new Date());
@@ -23,7 +23,7 @@ const Clock = () => {
     };
   }, []);
 
-  return <p className="date">Dzisiaj jest {formattedDate}</p>;
+  return <LocalDate>Dzisiaj jest {formattedDate}</LocalDate>;
 };
 
 export default Clock;
