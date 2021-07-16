@@ -12,3 +12,13 @@ export const FormSpan = styled.span`
   display: inline-block;
   width: 150px;
 `;
+export const FormInput = styled.input`
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 150px;
+`;
+export const FormSelect = styled.select`
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 150px;
+`;
