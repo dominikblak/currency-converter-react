@@ -1,19 +1,13 @@
-/* .result {
+import styled from "styled-components";
+
+export const ResultContent = styled.p`
   color: white;
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
-} */
-.result--yourcurrency {
-  color: green;
-}
-.result--selectedcurrency {
-  color: red;
-}
-@media (max-width: 767px) {
-  .result {
+  @media (max-width: 767px) {
     display: grid;
     grid-template-columns: auto;
     word-break: break-all;
   }
-}
+`;

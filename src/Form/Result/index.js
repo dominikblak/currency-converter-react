@@ -1,7 +1,8 @@
 import "./style.css";
+import { ResultContent } from "./styled";
 
 export const Result = ({ result }) => (
-  <p className="result">
+  <ResultContent>
     {result !== undefined && (
       <>
         Otrzymasz : &nbsp;
@@ -11,5 +12,5 @@ export const Result = ({ result }) => (
         </strong>
       </>
     )}
-  </p>
+  </ResultContent>
 );
