@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./style.css";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
+import { FormContent, FormFieldset, FormInput, FormSpan, FormButton } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -25,15 +25,14 @@ export const Form = () => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
-      <fieldset className="form__fieldset">
+    <FormContent onSubmit={onSubmit}>
+      <FormFieldset>
         <legend>Twoje dane</legend>
-        <Clock/>
+        <Clock />
         <p>
           <label htmlFor="amountid">
-            <span className="form__label"> Twoja kwota w zł :</span>
-            <input
-              className="form__input"
+            <FormSpan> Twoja kwota w zł :</FormSpan>
+            <FormInput
               type="number"
               name="amount"
               min="0"
@@ -48,11 +47,11 @@ export const Form = () => {
         </p>
         <p>
           <label htmlFor="currency">
-            <span className="form__label"> Wybierz walutę :</span>
-            <select
+            <FormSpan> Wybierz walutę :</FormSpan>
+            <FormInput
+              as="select"
               name="currency_choice"
               id="currency"
-              className="form__input"
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
             >
@@ -61,15 +60,15 @@ export const Form = () => {
                   {currency.name}
                 </option>
               ))}
-            </select>
+            </FormInput>
           </label>
         </p>
         <p>
-          <button className="form__button">Przelicz</button>
+          <FormButton>Przelicz</FormButton>
         </p>
         <Result result={result} />
-      </fieldset>
-    </form>
+      </FormFieldset>
+    </FormContent>
   );
 };
 export default Form;
