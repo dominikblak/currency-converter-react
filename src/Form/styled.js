@@ -5,3 +5,6 @@ export const FormContent = styled.form`
   margin: 0px auto;
   padding: 10px;
 `;
+export const FormFieldset = styled.fieldset`
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+`;
