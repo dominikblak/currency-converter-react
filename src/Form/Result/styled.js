@@ -11,3 +11,9 @@ export const ResultContent = styled.p`
     word-break: break-all;
   }
 `;
+export const ResultYourCurrency = styled(ResultContent)`
+  color: green;
+`;
+export const ResultSelectedCurrency = styled(ResultContent)`
+  color: red;
+`;
