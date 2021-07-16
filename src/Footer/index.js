@@ -1,4 +1,3 @@
-import "./style.css";
 import { FooterContent, FooterContainer, FooterContainerLink } from "./styled.js";
 
 const Footer = (props) => (
