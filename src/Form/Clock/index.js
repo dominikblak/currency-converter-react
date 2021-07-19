@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCurrentDate } from "./useCurrentDate";
 import { LocalDate } from "./styled";
 
 const Clock = () => {
-  const [date, setDate] = useState(new Date());
+  const date = useCurrentDate();
 
   const formattedDate = date.toLocaleDateString(undefined, {
     day: "numeric",
@@ -13,15 +13,6 @@ const Clock = () => {
     minute: "numeric",
     second: "numeric",
   });
-
-  useEffect(() => {
-    const intervalDate = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(intervalDate);
-    };
-  }, []);
 
   return <LocalDate>Dzisiaj jest {formattedDate}</LocalDate>;
 };
