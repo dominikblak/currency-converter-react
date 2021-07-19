@@ -19,15 +19,19 @@ Currency converter
 - HTML
 - CSS (CSS Flex, CSS Grid)
 - JavaScript (ES6+ features)
+- Media queries
 - GIT
 - React.js
 - Create-react-app
 - Babel
 - Webpack
+- styled-components
+
 
 #### 📚 Methodology
 
-- BEM
+- Immutability
+- Custom hooks
 
 ##### 👨‍💻 Author
 
