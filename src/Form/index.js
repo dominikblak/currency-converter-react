@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
-import { FormContent, FormFieldset, FormInput, FormSpan, FormButton } from "./styled";
+import { FormContent, Fieldset, Input, Span, Button } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -26,13 +26,13 @@ export const Form = () => {
 
   return (
     <FormContent onSubmit={onSubmit}>
-      <FormFieldset>
+      <Fieldset>
         <legend>Twoje dane</legend>
         <Clock />
         <p>
           <label htmlFor="amountid">
-            <FormSpan> Twoja kwota w zł :</FormSpan>
-            <FormInput
+            <Span> Twoja kwota w zł :</Span>
+            <Input
               type="number"
               name="amount"
               min="0"
@@ -47,8 +47,8 @@ export const Form = () => {
         </p>
         <p>
           <label htmlFor="currency">
-            <FormSpan> Wybierz walutę :</FormSpan>
-            <FormInput
+            <Span> Wybierz walutę :</Span>
+            <Input
               as="select"
               name="currency_choice"
               id="currency"
@@ -60,14 +60,14 @@ export const Form = () => {
                   {currency.name}
                 </option>
               ))}
-            </FormInput>
+            </Input>
           </label>
         </p>
         <p>
-          <FormButton>Przelicz</FormButton>
+          <Button>Przelicz</Button>
         </p>
         <Result result={result} />
-      </FormFieldset>
+      </Fieldset>
     </FormContent>
   );
 };

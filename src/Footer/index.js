@@ -1,12 +1,12 @@
-import { FooterContent, FooterContainer, FooterContainerLink } from "./styled.js";
+import { Content, Container, FooterContainerLink } from "./styled.js";
 
 const Footer = (props) => (
-  <FooterContent>
-    <FooterContainer as="div">
+  <Content>
+    <Container as="div">
       <FooterContainerLink as="a" target="blank" href="https://github.com/dominikblak">
         {props.author}
       </FooterContainerLink>
-    </FooterContainer>
-  </FooterContent>
+    </Container>
+  </Content>
 );
 export default Footer;

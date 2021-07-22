@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const FooterContent = styled.footer`
+export const Content = styled.footer`
   text-align: center;
 `;
-export const FooterContainer = styled(FooterContent)`
+export const Container = styled(Content)`
   padding: 20px;
 `;
-export const FooterContainerLink = styled(FooterContent)`
+export const FooterContainerLink = styled(Content)`
   text-decoration: none;
   color: white;
 `;
