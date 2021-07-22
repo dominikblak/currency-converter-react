@@ -1,3 +1,3 @@
-import { HeaderMain } from "./styled";
-const Header = (props) => <HeaderMain>{props.title}</HeaderMain>;
+import { Content } from "./styled";
+const Header = (props) => <Content>{props.title}</Content>;
 export default Header;
