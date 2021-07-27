@@ -5,7 +5,7 @@ export const FormContent = styled.form`
   margin: 0px auto;
   padding: 10px;
 `;
-export const Fieldset = styled.fieldset`
+export const Wrapper = styled.fieldset`
   background: ${({ theme }) => theme.color.gradient};
 `;
 export const Span = styled.span`
