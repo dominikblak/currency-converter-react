@@ -5,7 +5,7 @@ export const LocalDate = styled.p`
   text-align: right;
   padding: 10px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     text-align: center;
   }
 `;

@@ -5,15 +5,15 @@ export const ResultContent = styled.p`
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: auto;
     word-break: break-all;
   }
 `;
 export const ResultYourCurrency = styled(ResultContent)`
-  color: green;
+  color: ${({ theme }) => theme.color.green};
 `;
 export const ResultSelectedCurrency = styled(ResultContent)`
-  color: red;
+  color: ${({ theme }) => theme.color.red};
 `;

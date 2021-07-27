@@ -6,7 +6,7 @@ export const FormContent = styled.form`
   padding: 10px;
 `;
 export const Fieldset = styled.fieldset`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: ${({ theme }) => theme.color.gradient};
 `;
 export const Span = styled.span`
   display: inline-block;

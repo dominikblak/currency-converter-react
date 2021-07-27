@@ -8,5 +8,5 @@ export const Container = styled(Content)`
 `;
 export const FooterContainerLink = styled(Content)`
   text-decoration: none;
-  color: white;
+  color: ${({ theme }) => theme.color.white};
 `;
