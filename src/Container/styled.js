@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Content = styled.section`
+export const Wrapper = styled.section`
   max-width: 1000px;
   margin: 0 auto;
   color: ${({ theme }) => theme.color.white};

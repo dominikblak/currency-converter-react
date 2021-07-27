@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
-import { FormContent, Fieldset, Input, Span, Button } from "./styled";
+import { FormContent, Wrapper, Input, Span, Button } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -26,7 +26,7 @@ export const Form = () => {
 
   return (
     <FormContent onSubmit={onSubmit}>
-      <Fieldset>
+      <Wrapper>
         <legend>Twoje dane</legend>
         <Clock />
         <p>
@@ -67,7 +67,7 @@ export const Form = () => {
           <Button>Przelicz</Button>
         </p>
         <Result result={result} />
-      </Fieldset>
+      </Wrapper>
     </FormContent>
   );
 };
