@@ -21,3 +21,9 @@ export const Button = styled.button`
   display: block;
   margin: 30px auto 10px;
 `;
+export const Loading = styled.p`
+  color: ${({ theme }) => theme.color.green};
+`;
+export const Failure = styled.p`
+  color: ${({ theme }) => theme.color.red};
+`;
