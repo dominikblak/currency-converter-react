@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
-import { FormContent, Wrapper, Input, Span, Button } from "./styled";
+import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
 
 export const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].short);
