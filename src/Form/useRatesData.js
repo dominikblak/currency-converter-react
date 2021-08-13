@@ -1,25 +1,32 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
-export useRatesData = ()=>{
-    const [ratesData, setRatesData] = useState({
-        state : "loading",
-    });
-    useEffect(()=>{
-        cosnt fetchRates = async()=>{
-            try{
-                const response = await fetch("https://api.exchangerate.host/convert?from=USD&to=EUR");
+export const useRatesData = () => {
+  const [ratesData, setRatesData] = useState({
+    state: "loading",
+  });
 
-                if(!response.ok){
-                    throw new Error (response.statusText);
-                }
-                const {ratesData, date} = await response.json();
+  const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
 
-                setRatesData({
-                    state:"success",
-                    rates,
-                    date,
-                });
-            }
-        }
-    })
-}
+  useEffect(() => {
+    const apiDate = async () => {
+      try {
+        const response = await axios.get(apiUrl);
+        const { rates, date } = response.data;
+        console.log(response.data);
+
+        setRatesData({
+          state: "success",
+          rates,
+          date,
+        });
+      } catch {
+        setRatesData({
+          state: "error",
+        });
+      }
+    };
+    setTimeout(apiDate, 1000);
+  }, []);
+  return ratesData;
+};
