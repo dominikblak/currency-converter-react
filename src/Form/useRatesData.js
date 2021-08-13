@@ -20,7 +20,7 @@ export const useRatesData = () => {
           rates,
           date,
         });
-      } catch {
+      } catch (error) {
         setRatesData({
           state: "error",
         });

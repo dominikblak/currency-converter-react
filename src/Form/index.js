@@ -1,27 +1,42 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
 import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
+import { useRatesData } from "./useRatesData";
 
 export const Form = () => {
-  const [currency, setCurrency] = useState(currencies[0].short);
-
+  const [amount, setAmount] = useState("");
+  const [currency, setCurrency] = useState("EUR");
   const [result, setResult] = useState();
+
+  const inputRef = useRef(null);
+
+  const dataFromApi = useRatesData;
+
+  const status = dataFromApi.status;
+  const rates = dataFromApi.rates;
+  const date = dataFromApi.date;
+
   const calculateResault = (currency, amount) => {
-    const rate = currencies.find(({ short }) => short === currency).rate;
+    const rate = rates[currency];
 
     setResult({
       sourceAmount: +amount,
-      targetAmount: amount / rate,
+      targetAmount: amount * rate,
       currency,
     });
   };
 
-  const [amount, setAmount] = useState("");
   const onSubmit = (event) => {
     event.preventDefault();
+    const amountTrimed = amount.trim();
+    if (!amountTrimed) {
+      return;
+    }
+    setAmount(amountTrimed);
     calculateResault(currency, amount);
+    inputRef.current.focus();
   };
 
   return (
