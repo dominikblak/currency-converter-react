@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useRatesData = () => {
   const [ratesData, setRatesData] = useState({
-    state: "loading",
+    status: "loading",
   });
 
   const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
@@ -12,17 +12,17 @@ export const useRatesData = () => {
     const apiDate = async () => {
       try {
         const response = await axios.get(apiUrl);
-        const { rates, date } = response.data;
+        const { date, rates } = response.data;
         console.log(response.data);
 
         setRatesData({
-          state: "success",
+          status: "success",
           rates,
           date,
         });
       } catch (error) {
         setRatesData({
-          state: "error",
+          status: "error",
         });
       }
     };
