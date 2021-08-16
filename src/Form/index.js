@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { currencies } from "./currency.js";
+// import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
 import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
@@ -16,7 +16,7 @@ export const Form = () => {
 
   const status = dataFromApi.status;
   const rates = dataFromApi.rates;
-  const date = dataFromApi.date;
+  // const date = dataFromApi.date;
 
   const calculateResault = (currency, amount) => {
     const rate = rates[currency];
@@ -44,44 +44,54 @@ export const Form = () => {
       <Wrapper>
         <legend>Twoje dane</legend>
         <Clock />
-        <p>
-          <label htmlFor="amountid">
-            <Span> Twoja kwota w zł :</Span>
-            <Input
-              type="number"
-              name="amount"
-              min="0"
-              id="amountid"
-              required
-              step="0.01"
-              placeholder="Podaj kwotę w zł"
-              value={amount}
-              onChange={({ target }) => setAmount(target.value)}
-            />
-          </label>
-        </p>
-        <p>
-          <label htmlFor="currency">
-            <Span> Wybierz walutę :</Span>
-            <Input
-              as="select"
-              name="currency_choice"
-              id="currency"
-              value={currency}
-              onChange={({ target }) => setCurrency(target.value)}
-            >
-              {currencies.map((currency) => (
-                <option key={currency.short} value={currency.short}>
-                  {currency.name}
-                </option>
-              ))}
-            </Input>
-          </label>
-        </p>
-        <p>
-          <Button>Przelicz</Button>
-        </p>
-        <Result result={result} />
+        {status === "loading" ? (
+          <Loading>Sekunda... ładuje kursy z Europejskiego Banku Centralnego.</Loading>
+        ) : status === "error" ? (
+          <Failure>Coś poszło nie tak - sprawdź czy masz połączenie z internetem</Failure>
+        ) : (
+          <>
+            <p>
+              <label htmlFor="amountid">
+                <Span> Twoja kwota w zł :</Span>
+                <Input
+                  ref={inputRef}
+                  type="number"
+                  name="amount"
+                  min="0"
+                  id="amountid"
+                  required
+                  step="0.01"
+                  placeholder="Podaj kwotę w zł"
+                  value={amount}
+                  onChange={({ target }) => setAmount(target.value)}
+                />
+              </label>
+            </p>
+            <p>
+              <label htmlFor="currency">
+                <Span> Wybierz walutę : </Span>
+                <Input
+                  as="select"
+                  name="currency_choice"
+                  id="currency"
+                  value={currency}
+                  required
+                  onChange={({ target }) => setCurrency(target.value)}
+                >
+                  {Object.keys(rates).map((currency) => (
+                    <option key={currency} value={currency}>
+                      {currency}
+                    </option>
+                  ))}
+                </Input>
+              </label>
+            </p>
+            <p>
+              <Button>Przelicz</Button>
+            </p>
+            <Result result={result} />
+          </>
+        )}
       </Wrapper>
     </FormContent>
   );
