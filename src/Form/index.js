@@ -12,7 +12,7 @@ export const Form = () => {
 
   const inputRef = useRef(null);
 
-  const dataFromApi = useRatesData;
+  const dataFromApi = useRatesData();
 
   const status = dataFromApi.status;
   const rates = dataFromApi.rates;
