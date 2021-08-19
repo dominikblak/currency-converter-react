@@ -4,6 +4,7 @@ import { Result } from "./Result";
 import Clock from "./Clock";
 import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
 import { useRatesData } from "./useRatesData";
+import {Paragraph} from "../../src/Paragraph";
 
 export const Form = () => {
   const [amount, setAmount] = useState("");
@@ -41,15 +42,18 @@ export const Form = () => {
 
   return (
     <FormContent onSubmit={onSubmit}>
-      <Wrapper>
-        <legend>Twoje dane</legend>
-        <Clock />
-        {status === "loading" ? (
-          <Loading>Sekunda... ładuje kursy z Europejskiego Banku Centralnego.</Loading>
-        ) : status === "error" ? (
-          <Failure>Coś poszło nie tak - sprawdź czy masz połączenie z internetem</Failure>
-        ) : (
-          <>
+      {status === "loading" ? (
+        <>
+            <Loading/>
+            <Paragraph text = "Sekunda... ładuje kursy z Europejskiego Banku Centralnego."/>
+        </>
+      ) : status === "error" ? (
+        <Failure>Coś poszło nie tak - sprawdź czy masz połączenie z internetem</Failure>
+      ) : (
+        <>
+          <Wrapper>
+            <legend>Twoje dane</legend>
+            <Clock />
             <p>
               <label htmlFor="amountid">
                 <Span> Twoja kwota w zł :</Span>
@@ -90,9 +94,9 @@ export const Form = () => {
               <Button>Przelicz</Button>
             </p>
             <Result result={result} />
-          </>
-        )}
-      </Wrapper>
+          </Wrapper>
+        </>
+      )}
     </FormContent>
   );
 };
