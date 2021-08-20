@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import loading from "./loading2.gif";
+import loading from "./loading.gif";
 
 export const FormContent = styled.form`
   max-width: 500px;
