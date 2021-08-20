@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import loading from "./loading.gif";
-
+import loading from "./loading2.gif";
 
 export const FormContent = styled.form`
   max-width: 500px;
@@ -38,12 +37,12 @@ export const Button = styled.button`
 `;
 
 export const Loading = styled.div`
-
-   width: 200px;
-   height:200px;
-  margin:0 auto;
- text-align:center;
   background-image: url("${loading}");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  background-position: center;
 `;
 export const Failure = styled.p`
   color: ${({ theme }) => theme.color.red};
