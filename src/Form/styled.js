@@ -9,6 +9,8 @@ export const FormContent = styled.form`
 `;
 export const Wrapper = styled.fieldset`
   background: ${({ theme }) => theme.color.gradient};
+  border-radius: 20px;
+  box-shadow: 0 0 1em ${({ theme }) => theme.color.gold};
 `;
 export const Span = styled.span`
   display: inline-block;
