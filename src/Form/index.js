@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-// import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
 import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
@@ -17,7 +16,7 @@ export const Form = () => {
 
   const status = dataFromApi.status;
   const rates = dataFromApi.rates;
-  // const date = dataFromApi.date;
+  const date = dataFromApi.date;
 
   const calculateResault = (currency, amount) => {
     const rate = rates[currency];
@@ -96,7 +95,7 @@ export const Form = () => {
             <p>
               <Button>Przelicz</Button>
             </p>
-            <Result result={result} />
+            <Result result={result} date={date} />
           </Wrapper>
         </>
       )}

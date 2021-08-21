@@ -6,14 +6,13 @@ export const useRatesData = () => {
     status: "loading",
   });
 
-  const apiUrl = "https://api.exchangeratee.host/latest?base=PLN";
+  const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
 
   useEffect(() => {
     const apiDate = async () => {
       try {
         const response = await axios.get(apiUrl);
         const { date, rates } = response.data;
-        console.log(response.data);
 
         setRatesData({
           status: "success",
