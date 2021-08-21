@@ -13,12 +13,11 @@ export const useRatesData = () => {
       try {
         const response = await axios.get(apiUrl);
         const { date, rates } = response.data;
-        console.log(response.data);
 
         setRatesData({
-          status: "success",
-          rates,
           date,
+          rates,
+          status: "success",
         });
       } catch (error) {
         setRatesData({

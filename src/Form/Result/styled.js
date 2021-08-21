@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ResultContent = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.color.gradient};
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;

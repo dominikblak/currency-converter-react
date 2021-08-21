@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
-// import { currencies } from "./currency.js";
 import { Result } from "./Result";
 import Clock from "./Clock";
 import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
 import { useRatesData } from "./useRatesData";
-import {Paragraph} from "../../src/Paragraph";
+import { Paragraph } from "../../src/Paragraph";
 
 export const Form = () => {
   const [amount, setAmount] = useState("");
@@ -17,7 +16,7 @@ export const Form = () => {
 
   const status = dataFromApi.status;
   const rates = dataFromApi.rates;
-  // const date = dataFromApi.date;
+  const date = dataFromApi.date;
 
   const calculateResault = (currency, amount) => {
     const rate = rates[currency];
@@ -44,11 +43,14 @@ export const Form = () => {
     <FormContent onSubmit={onSubmit}>
       {status === "loading" ? (
         <>
-            <Loading/>
-            <Paragraph text = "Sekunda... ładuje kursy z Europejskiego Banku Centralnego."/>
+          <Loading />
+          <Paragraph text="Sekunda... ładuje kursy z Europejskiego Banku Centralnego." />
         </>
       ) : status === "error" ? (
-        <Failure>Coś poszło nie tak - sprawdź czy masz połączenie z internetem</Failure>
+        <>
+          <Failure />
+          <Paragraph text=" Coś poszło nie tak - sprawdź czy masz połączenie z internetem." />
+        </>
       ) : (
         <>
           <Wrapper>
@@ -93,7 +95,7 @@ export const Form = () => {
             <p>
               <Button>Przelicz</Button>
             </p>
-            <Result result={result} />
+            <Result result={result} date={date} />
           </Wrapper>
         </>
       )}
