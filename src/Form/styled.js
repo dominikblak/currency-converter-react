@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import loading from "./loading.gif";
+import errorInfo from "./error.gif";
 
 export const FormContent = styled.form`
   max-width: 500px;
@@ -44,6 +45,11 @@ export const Loading = styled.div`
   margin: 0 auto;
   background-position: center;
 `;
-export const Failure = styled.p`
-  color: ${({ theme }) => theme.color.red};
+export const Failure = styled.div`
+  background-image: url("${errorInfo}");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 150px;
+  margin: 20px auto;
+  background-position: center;
 `;

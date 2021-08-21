@@ -4,7 +4,7 @@ import { Result } from "./Result";
 import Clock from "./Clock";
 import { FormContent, Wrapper, Input, Span, Button, Loading, Failure } from "./styled";
 import { useRatesData } from "./useRatesData";
-import {Paragraph} from "../../src/Paragraph";
+import { Paragraph } from "../../src/Paragraph";
 
 export const Form = () => {
   const [amount, setAmount] = useState("");
@@ -44,11 +44,14 @@ export const Form = () => {
     <FormContent onSubmit={onSubmit}>
       {status === "loading" ? (
         <>
-            <Loading/>
-            <Paragraph text = "Sekunda... ładuje kursy z Europejskiego Banku Centralnego."/>
+          <Loading />
+          <Paragraph text="Sekunda... ładuje kursy z Europejskiego Banku Centralnego." />
         </>
       ) : status === "error" ? (
-        <Failure>Coś poszło nie tak - sprawdź czy masz połączenie z internetem</Failure>
+        <>
+          <Failure />
+          <Paragraph text=" Coś poszło nie tak - sprawdź czy masz połączenie z internetem." />
+        </>
       ) : (
         <>
           <Wrapper>
