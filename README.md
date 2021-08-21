@@ -28,7 +28,7 @@ Currency converter
 - styled-components
 - Custom hooks
 - Axios
-- API.
+- API
 
 
 #### 📚 Methodology
