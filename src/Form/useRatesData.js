@@ -15,9 +15,9 @@ export const useRatesData = () => {
         const { date, rates } = response.data;
 
         setRatesData({
-          status: "success",
-          rates,
           date,
+          rates,
+          status: "success",
         });
       } catch (error) {
         setRatesData({
