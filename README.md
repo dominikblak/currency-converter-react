@@ -9,7 +9,7 @@
 ### ✏ Description
 
 Currency converter 
-- responsive currency converter from PLN to EUR, USD, GBP,
+- converts PLN into other currencies based on the Exchanges Rates European Central Bank.
 - clock with local date and time
 <img src="https://github.com/dominikblak/currency-converter-react/blob/master/Animation_currency_converter.gif" alt="demo_Currency_converter">
 
@@ -26,12 +26,14 @@ Currency converter
 - Babel
 - Webpack
 - styled-components
+- Custom hooks
+- Axios
+- API.
 
 
 #### 📚 Methodology
 
 - Immutability
-- Custom hooks
 
 ##### 👨‍💻 Author
 
