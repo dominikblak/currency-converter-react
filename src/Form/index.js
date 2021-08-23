@@ -12,11 +12,12 @@ export const Form = () => {
 
   const inputRef = useRef(null);
 
-  const dataFromApi = useRatesData();
+  // const dataFromApi = useRatesData();
 
-  const status = dataFromApi.status;
-  const rates = dataFromApi.rates;
-  const date = dataFromApi.date;
+  const { status, rates, date } = useRatesData();
+  // const status = dataFromApi.status;
+  // const rates = dataFromApi.rates;
+  // const date = dataFromApi.date;
 
   const calculateResault = (currency, amount) => {
     const rate = rates[currency];
