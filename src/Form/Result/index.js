@@ -10,9 +10,7 @@ export const Result = ({ result, date }) => (
         <ResultSelectedCurrency as="strong">
           {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
         </ResultSelectedCurrency>
-        <LocalDate onlyDate>
-          Kurs z Europejskiego Banku Centralnego aktualny na dzień : <p>{date}</p>
-        </LocalDate>
+        <LocalDate onlyDate>Kurs z Europejskiego Banku Centralnego aktualny na dzień&nbsp;: {date}</LocalDate>
       </>
     )}
   </ResultContent>
