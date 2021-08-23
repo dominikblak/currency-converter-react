@@ -50,7 +50,7 @@ export const Form = () => {
       ) : (
         <>
           <Wrapper>
-            <legend>Twoje dane</legend>
+            <legend>Podaj kwotę w zł</legend>
             <Clock />
             <p>
               <label htmlFor="amountid">
