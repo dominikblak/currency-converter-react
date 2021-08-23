@@ -6,6 +6,8 @@ export const ResultContent = styled.p`
   font-weight: bold;
   font-size: 1.2em;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: grid;
+    grid-template-columns: auto;
     word-break: break-all;
   }
 `;
