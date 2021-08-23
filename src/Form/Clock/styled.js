@@ -9,5 +9,6 @@ export const LocalDate = styled.p`
     css`
       font-weight: normal;
       font-size: 13px;
+      word-break: break-word;
     `}
 `;
