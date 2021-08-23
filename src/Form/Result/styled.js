@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ResultContent = styled.p`
+export const ResultContent = styled.div`
   color: ${({ theme }) => theme.color.gradient};
   text-align: center;
   font-weight: bold;
