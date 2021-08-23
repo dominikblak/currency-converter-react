@@ -1,7 +1,7 @@
 export const theme = {
   color: {
     white: "#FFFFFF",
-    gradient: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
+    gradient: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))",
     green: "#008000",
     red: "#FF0000",
     blue: "#0000FF",
