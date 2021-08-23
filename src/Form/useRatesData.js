@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { apiUrl } from "../apiUrl";
 
 export const useRatesData = () => {
   const [ratesData, setRatesData] = useState({
     status: "loading",
   });
 
-  const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
+  // const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
 
   useEffect(() => {
     const apiDate = async () => {
