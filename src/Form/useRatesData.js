@@ -7,8 +7,6 @@ export const useRatesData = () => {
     status: "loading",
   });
 
-  // const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
-
   useEffect(() => {
     const fetchApiData = async () => {
       try {
