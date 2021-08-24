@@ -66,7 +66,7 @@ export const Form = () => {
                   id="amountid"
                   required
                   step="0.01"
-                  placeholder="Podaj kwotę w zł"
+                  placeholder="0,00"
                   value={amount}
                   onChange={({ target }) => setAmount(target.value)}
                 />
