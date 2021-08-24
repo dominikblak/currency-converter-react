@@ -11,6 +11,9 @@ export const Form = () => {
   const [result, setResult] = useState();
 
   const inputRef = useRef(null);
+  const clearAmount = () => {
+    setAmount([]);
+  };
 
   const { status, rates, date } = useRatesData();
 
@@ -30,7 +33,7 @@ export const Form = () => {
     if (!amountTrimed) {
       return;
     }
-    setAmount(amountTrimed);
+    clearAmount(amountTrimed);
     calculateResault(currency, amount);
     inputRef.current.focus();
   };
@@ -63,7 +66,7 @@ export const Form = () => {
                   id="amountid"
                   required
                   step="0.01"
-                  placeholder="Podaj kwotę w zł"
+                  placeholder="0,00"
                   value={amount}
                   onChange={({ target }) => setAmount(target.value)}
                 />
