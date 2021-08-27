@@ -12,6 +12,7 @@ export const useRatesData = () => {
       try {
         const response = await axios.get(apiUrl);
         const { date, rates } = response.data;
+        console.log(response.data);
 
         setRatesData({
           date,
