@@ -1,1 +1,1 @@
-export const apiUrl = "https://api.exchangerate.host/latest?base=PLN";
+export const apiUrl = `https://api.exchangerate.host/latest=${new Date().getTime()}?base=PLN`;
